@@ -15,7 +15,7 @@ $ . bin/activate</code></pre>
 
 Clone down the training repo.
 
-<pre><code>$ git clone git@github.com:anthonyjpesce/bruin-training.git project</code></pre>
+<pre><code>$ git clone git://github.com/anthonyjpesce/bruin-training.git project</code></pre>
 
 Enter the project and install its dependencies.
 

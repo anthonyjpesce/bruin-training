@@ -1,0 +1,46 @@
+{% load humanize admissions_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My test page</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+        <!-- Custom CSS -->
+        <style type="text/css">
+
+        </style>
+        <!-- JavaScript -->
+        <!-- Check out the jQuery documentation here: http://api.jquery.com/ -->
+        <!-- And the Bootstrap documentation here: http://twitter.github.com/bootstrap/ -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <!-- Custom JavaScript -->
+        <script>
+            // Type your code here
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Admissions data</h1>
+            <table class="table table-striped">
+                <thead>
+                    <th>Year</th>
+                    <th>Applicants</th>
+                    <th>Admits</th>
+                    <th>Admit rate</th>
+                </thead>
+                <tbody>
+                    {% for year in years %}
+                        <tr>
+                            <td>{{ year.year }}</td>
+                            <td>{{ year.total_applicants|intcomma }}</td>
+                            <td>{{ year.total_admits|intcomma }}</td>
+                            <td>{{ year.total_admit_rate|multiply:"100"|floatformat:"1" }}%</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
